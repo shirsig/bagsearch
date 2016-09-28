@@ -18,7 +18,7 @@ function bagsearch:ADDON_LOADED()
 	searchbox:SetHeight(18)
 	do
 		local tex = searchbox:CreateTexture(nil, 'OVERLAY')
-		tex:SetTexture[[Interface\Common\UI-Searchbox-Icon]]
+		tex:SetTexture[[Interface\AddOns\!bagsearch\UI-Searchbox-Icon]]
 		tex:SetPoint('LEFT', 0, -2)
 		tex:SetWidth(14)
 		tex:SetHeight(14)
@@ -29,7 +29,7 @@ function bagsearch:ADDON_LOADED()
 		btn:SetWidth(17)
 		btn:SetHeight(17)
 		local tex = btn:CreateTexture(nil, 'ARTWORK')
-		tex:SetTexture[[Interface\FriendsFrame\ClearBroadcastIcon]]
+		tex:SetTexture[[Interface\AddOns\!bagsearch\ClearBroadcastIcon]]
 		tex:SetPoint('TOPLEFT', 0, 0)
 		tex:SetWidth(17)
 		tex:SetHeight(17)
