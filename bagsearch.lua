@@ -70,17 +70,6 @@ do
 	    ret[3] = ret[3] or (link and not bagsearch.test(gsub(link, '.*%[(.*)%].*', '%1'))) and 1 or nil
 	    return unpack(ret)
 	end
-	function bagsearch:update()
-		for bag = -1, 10 do
-			for slot = 1, GetContainerNumSlots(bag) do
-				local icon, _, locked = orig(bag, slot)
-				if icon and not locked then
-					PickupContainerItem(bag, slot)
-					ClearCursor()
-				end
-			end
-		end
-	end
 end
 
 function bagsearch:pack(...)
