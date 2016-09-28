@@ -11,6 +11,7 @@ function bagsearch:ADDON_LOADED()
 	
 	local searchbox = CreateFrame('EditBox', nil, UIParent, 'InputBoxTemplate')
 	searchbox:SetAutoFocus(false)
+	searchbox:SetMaxLetters(15)
 	searchbox:SetFontObject(GameFontHighlightSmall)
 	searchbox:SetPoint('CENTER', UIParent:GetCenter())
 	searchbox:SetWidth(96)
@@ -50,7 +51,11 @@ function bagsearch:ADDON_LOADED()
 
 	searchbox:SetScript('OnTextChanged', function()
 		self.test = self:fuzzy_matcher(this:GetText())
-		self:update()
+		local orig = PlaySound
+		PlaySound = function() end
+		OpenAllBags()
+		OpenAllBags(true)
+		PlaySound = orig
 	end)
 
 	self.test = function() return true end
